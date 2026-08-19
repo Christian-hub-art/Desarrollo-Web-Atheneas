@@ -1,0 +1,94 @@
+
+.boton {
+    display: inline-block;
+    background-color: #422722;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+a {
+    color: azure;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+/* Estilo para los héroes */
+[data-tipo="heroe"] {
+    border-left: 5px solid #56A11A;
+}
+
+/* Estilo para los villanos */
+[data-tipo="villano"] {
+    border-left: 5px solid #A11A1E;
+}
+
+body {
+    background-color: #24326B;
+    color: rgba(255, 255, 255, 0.993);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.ficha {
+    background-color: dimgrey;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+.nombre {
+    color: aliceblue;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.clase {
+    color: aliceblue;
+    font-style: italic;
+}
+
+.stats {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 16px;
+    justify-content: space-between;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.vida {
+    color: #d4a537;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+#titulo-galeria {
+    letter-spacing: 1px;
+    border-bottom: 2px solid aliceblue;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.redes-pagina > p {
+    font-style: italic;
+    background-color: #2a2a2a;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+h3 + p {
+    margin-top: 16px;
+    border-top: 2px solid #d4a537;
+    padding-top: 12px;
+}
+
+h3 ~ p {
+    color: #d4a537;
+    font-weight: bold;
+}
+
