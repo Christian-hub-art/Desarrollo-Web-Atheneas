@@ -16,12 +16,12 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Estilo para los héroes */
+
 [data-tipo="heroe"] {
     border-left: 5px solid #56A11A;
 }
 
-/* Estilo para los villanos */
+
 [data-tipo="villano"] {
     border-left: 5px solid #A11A1E;
 }
@@ -37,6 +37,9 @@ body {
     background-color: dimgrey;
     border-radius: 10px;
     text-align: center;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
 }
 
 .ficha img {
@@ -61,7 +64,8 @@ body {
     display: grid;
     gap: 16px;
     justify-content: space-between;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    overflow-wrap: anywhere;
 }
 
 .vida {
@@ -95,3 +99,17 @@ h3 ~ p {
     font-weight: bold;
 }
 
+
+
+#aetheria-carousel .carousel-caption h2 {
+    color: #000000;
+}
+
+#aetheria-carousel .carousel-caption p {
+    color: #ffffff;
+}
+
+#aetheria-carousel .carousel-caption h2,
+#aetheria-carousel .carousel-caption p {
+    font-family: Georgia, 'Times New Roman', serif;
+}
