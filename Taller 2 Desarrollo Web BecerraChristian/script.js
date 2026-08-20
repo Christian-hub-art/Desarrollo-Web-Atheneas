@@ -84,7 +84,7 @@ window.onload = function(){
     for ( var ficha of fichas ){
         var botonFav = document.createElement("button");
         botonFav.textContent = "⭐ Favorito";
-        ficha.appendChild(botonFav);
+        ficha.querySelector(".card-body").appendChild(botonFav);
         botonFav.addEventListener("click",function(){
             var nombre = this.closest(".ficha").querySelector(".nombre");
             guardarFavorito(nombre.textContent)
