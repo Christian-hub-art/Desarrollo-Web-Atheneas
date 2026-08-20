@@ -1,29 +1,23 @@
 window.onload = function(){
     var fichas = document.querySelectorAll(".ficha");
+    function mostrarTipo(tipo) {
+        for (var ficha of fichas) {
+            ficha.closest(".col-12").style.display =
+                tipo === "todos" || ficha.getAttribute("data-tipo") === tipo ? "" : "none";
+        }
+    }
     var boton = document.createElement("button");
     boton.textContent = "Mostrar solo héroes";
     document.body.appendChild(boton);
     boton.addEventListener("click", function(){
-            for (var ficha of fichas ){
-                if(ficha.getAttribute("data-tipo")=== "villano") {
-                    ficha.style.display = "none";
-                }else{
-                    ficha.classList.add("resultado");
-                }
-            }
+            mostrarTipo("heroe");
     });
 
     var boton2 = document.createElement("button");
     boton2.textContent = "Mostrar solo villanos";
     document.body.appendChild(boton2);
     boton2.addEventListener("click", function(){
-        for(var ficha of fichas){
-            if(ficha.getAttribute("data-tipo")==="heroe"){
-                ficha.style.display = "none";
-            }else{
-                ficha.classList.add("resultado");
-            }
-        }
+        mostrarTipo("villano");
     });
 
     for (var ficha of fichas) {
@@ -92,7 +86,7 @@ window.onload = function(){
         botonFav.textContent = "⭐ Favorito";
         ficha.appendChild(botonFav);
         botonFav.addEventListener("click",function(){
-            var nombreEl = this.parentElement-this.querySelector(".nombre");
+            var nombre = this.closest(".ficha").querySelector(".nombre");
             guardarFavorito(nombre.textContent)
             .then(function(mensaje) { console.log(mensaje); })
             .catch(function(error) { console.log(error); });
